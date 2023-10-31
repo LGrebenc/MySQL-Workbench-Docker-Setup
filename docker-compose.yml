@@ -1,32 +1,32 @@
 version: "2.1"
 services:
   db:
-    image: mysql:8.0
-    container_name: mysql-server
+    image: mysql:8.0                            #set container image
+    container_name: mysql-server                #set container name
     cap_add:
-      - SYS_NICE
-    restart: unless-stopped
+      - SYS_NICE                                #suppress unuseful error messages
+    restart: unless-stopped                     #restart the container on crash (or host restart) unless manually stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=ETiWTtVotSoDiWFNE
+      - MYSQL_ROOT_PASSWORD=ETiWTtVotSoDiWFNE   #what to set the MySQL root password to
     ports:
-      - '3306:3306'
+      - '3306:3306'                             #port for the mysql-server to use
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql                     #where to store the database
 
   mysql-workbench:
-    image: lscr.io/linuxserver/mysql-workbench:latest
-    container_name: mysql-workbench
+    image: lscr.io/linuxserver/mysql-workbench:latest   #set container image
+    container_name: mysql-workbench                     #set container name
     depends_on:
-      - db
+      - db                                              #set as a dependency on db
     environment:
-      - PUID=1000
+      - PUID=1000                                       #specify user puid, and guid
       - PGID=1000
-      - TZ=America/Denver
+      - TZ=Etc/UTC                                      #set timezone
     volumes:
-      - ./config:/config
+      - ./config:/config                                #where to store the config directory
     ports:
-      - 3000:3000
-      - 3001:3001
+      - 3000:3000                                       #set port for the http workbench gui
+      - 3001:3001                                       #set port for the https workbench gui
     cap_add:
-      - IPC_LOCK
-    restart: unless-stopped
+      - IPC_LOCK                                        #needed for keychain functionality
+    restart: unless-stopped                             #restart the container on crash (or host restart) unless manually stopped
