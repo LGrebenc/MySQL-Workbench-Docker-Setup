@@ -4,7 +4,7 @@ This repository will be a guide on setting up the [mysql](https://hub.docker.com
 ## Usage
 
 ### Creating the containers
-Download the docker-compose.yml file or clone the repository and move the docker-compose.yml file to the directory in which you will be working. From here, we need to make some changes. Edit the docker-compose.yml file and set the mysql root password. This will be under the DB service, under environmnet and will look lik this:
+Download the docker-compose.yml file or clone the repository and move the docker-compose.yml file to the directory in which you will be working. From here, we need to make some changes. Edit the docker-compose.yml file and set the mysql root password. This will be under the DB service, under environment and will look like this:
 ```yaml
 #<*** in between code ***>
 environment:
