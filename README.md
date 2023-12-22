@@ -30,4 +30,4 @@ From there you should be good to go, although feel free to make more changes to 
 Caution: Construction in progess
 
 ### Access the MySQL shell via cli
-For any use case in which you want to use the MySQL shell over using the workbench, you can access this by running the  command `docker exec -it <container-name-here> mysql -p` from your host's commandline. The docker exec command allows us to 'ssh' into the container, we then specify the command we want to run in the container `mysql -p` which will open the mysql shell and prompt login with the root password we set in the compose file.
+For any use case in which you want to use the MySQL shell instead of using the workbench, you can access this by running the  command `docker exec -it <container-name-here> mysql -p` from your host's commandline. The docker exec command allows us to 'ssh' into the container, we then specify the command we want to run in the container `mysql -p` which will open the mysql shell and prompt login with the root password we set in the compose file.
