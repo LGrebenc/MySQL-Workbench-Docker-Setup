@@ -1,5 +1,5 @@
 # MySQL-Workbench-Docker-Setup
-This repository will be a guide on setting up the [mysql](https://hub.docker.com/_/mysql/), and [mysql-workbench](https://hub.docker.com/r/linuxserver/mysql-workbench) containers and getting them to work with each other.
+This repository will be a guide on setting up the [mysql](https://hub.docker.com/_/mysql/), and [mysql-workbench](https://hub.docker.com/r/linuxserver/mysql-workbench) docker containers and getting them to work with each other.
 
 ## Usage
 
